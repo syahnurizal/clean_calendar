@@ -51,7 +51,7 @@ class MonthViewScrollablePageViewBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 40 * 6,
+      height: 40 * 5,
       child: PageView.custom(
         controller: pageControllerState.pageController,
         childrenDelegate: SliverChildBuilderDelegate(
