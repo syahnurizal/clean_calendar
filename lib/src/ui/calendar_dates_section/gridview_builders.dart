@@ -290,7 +290,7 @@ class DateSingleMultipleSelectionMonthViewGridViewBuilder
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         childAspectRatio: 1,
         crossAxisCount: 7,
-        mainAxisExtent: 40,
+        mainAxisExtent: 35,
       ),
       itemCount: 42,
       physics: const NeverScrollableScrollPhysics(),

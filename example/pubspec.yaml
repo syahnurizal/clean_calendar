@@ -32,6 +32,9 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # FONT
+  google_fonts: ^4.0.4
+
   clean_calendar:
     path: ../
 

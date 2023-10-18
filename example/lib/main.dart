@@ -1,5 +1,6 @@
 import 'package:clean_calendar/clean_calendar.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() => runApp(const MyApp());
 
@@ -39,50 +40,88 @@ class _HomeState extends State<Home> {
       body: Center(
         child: ListView(
           children: [
-        Card(
-        margin: EdgeInsets.fromLTRB(24, 10, 24, 16),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(5),
-        ),
-        color: Colors.white,
-        surfaceTintColor: Colors.white,
-        child: CleanCalendar(
-          headerProperties: HeaderProperties(
-            navigatorDecoration: NavigatorDecoration(
-              navigatorResetButtonIcon: Icon(Icons.today, size: 20),
-              navigateLeftButtonIcon: Icon(Icons.chevron_left, size: 20),
-              navigateRightButtonIcon: Icon(Icons.chevron_right, size: 20),
-
-            )
-          ),
-            enableDenseViewForDates: true,
-            leadingTrailingDatesProperties: DatesProperties(
-              disable: true,
-              hide: false,
-              datesDecoration: DatesDecoration(
-                datesBorderRadius: 1000,
-                datesBackgroundColor: Colors.grey[100],
-                datesBorderColor: Colors.white,
+            Card(
+              margin: const EdgeInsets.fromLTRB(24, 10, 24, 16),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(5),
+              ),
+              color: Colors.white,
+              surfaceTintColor: Colors.white,
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 8, left: 4, right: 4),
+                child: CleanCalendar(
+                    enableDenseViewForDates: true,
+                    headerProperties: HeaderProperties(
+                        navigatorDecoration: NavigatorDecoration(
+                          navigatorResetButtonIcon: const Icon(Icons.today, size: 20),
+                          navigateLeftButtonIcon: const Icon(Icons.chevron_left, size: 20),
+                          navigateRightButtonIcon: const Icon(Icons.chevron_right, size: 20),
+                        ),
+                        monthYearDecoration: MonthYearDecoration(
+                            monthYearTextStyle: GoogleFonts.poppins(
+                                textStyle: const TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w600,
+                                )),
+                            monthYearTextColor: Colors.green)),
+                    weekdaysProperties: WeekdaysProperties(
+                        generalWeekdaysDecoration: WeekdaysDecoration(
+                            weekdayTextStyle: GoogleFonts.poppins(
+                                textStyle: const TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w600,
+                                ))
+                        )
+                    ),
+                    leadingTrailingDatesProperties: DatesProperties(
+                      disable: true,
+                      hide: false,
+                      datesDecoration: DatesDecoration(
+                          datesBorderRadius: 1000,
+                          datesBackgroundColor: Colors.grey[100],
+                          datesBorderColor: Colors.white,
+                          datesTextStyle: GoogleFonts.poppins(
+                              textStyle: const TextStyle(
+                                fontSize: 13,
+                              ))),
+                    ),
+                    currentDateProperties: DatesProperties(
+                      datesDecoration: DatesDecoration(
+                          datesBorderRadius: 1000,
+                          datesBackgroundColor: Colors.green.withOpacity(0.2),
+                          datesBorderColor: Colors.green,
+                          datesTextColor: Colors.green,
+                          datesTextStyle: GoogleFonts.poppins(
+                              textStyle: const TextStyle(
+                                fontSize: 13,
+                              ))),
+                    ),
+                    generalDatesProperties: DatesProperties(
+                      datesDecoration: DatesDecoration(
+                          datesBorderRadius: 1000,
+                          datesBackgroundColor: Colors.white,
+                          datesBorderColor: Colors.white,
+                          datesTextColor: Colors.black87,
+                          datesTextStyle: GoogleFonts.poppins(
+                              textStyle: const TextStyle(
+                                fontSize: 13,
+                              ))),
+                    ),
+                    selectedDatesProperties:  DatesProperties(
+                      datesDecoration: DatesDecoration(
+                          datesBorderRadius: 1000,
+                          datesBackgroundColor: Colors.green,
+                          datesBorderColor: Colors.green,
+                          datesTextColor: Colors.white,
+                          datesTextStyle: GoogleFonts.poppins(
+                              textStyle: const TextStyle(
+                                fontSize: 13,
+                              ))),
+                    ),
+                    dateSelectionMode: DatePickerSelectionMode.singleOrMultiple,
+                    ),
               ),
             ),
-            currentDateProperties: DatesProperties(
-              datesDecoration: DatesDecoration(
-                datesBorderRadius: 1000,
-                datesBackgroundColor: Colors.green.withOpacity(0.2),
-                datesBorderColor: Colors.green,
-                datesTextColor: Colors.green,
-              ),
-            ),
-            generalDatesProperties: DatesProperties(
-              datesDecoration: DatesDecoration(
-                datesBorderRadius: 1000,
-                datesBackgroundColor: Colors.white,
-                datesBorderColor: Colors.white,
-                datesTextColor: Colors.black87,
-              ),
-            )
-        ),
-      ),
             const SizedBox(
               height: 20,
             ),
