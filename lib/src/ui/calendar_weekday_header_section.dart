@@ -24,7 +24,7 @@ class CalendarWeekdayHeaderSection extends StatelessWidget {
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         childAspectRatio: 1,
         crossAxisCount: 7,
-        mainAxisExtent: 40,
+        mainAxisExtent: 34,
       ),
       itemCount: calendarProperties.weekdaysSymbol.toMap().length,
       physics: const NeverScrollableScrollPhysics(),

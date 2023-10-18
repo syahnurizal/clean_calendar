@@ -35,7 +35,8 @@ class CalendarNavigatorHeaderSection extends StatelessWidget {
         Icon navigatorResetButtonIcon = calendarProperties.headerProperties
                 .navigatorDecoration?.navigatorResetButtonIcon ??
             const Icon(
-              Icons.calendar_today,
+              Icons.today,
+              size: 18,
             );
 
         Icon navigateLeftButtonIcon = calendarProperties
@@ -61,6 +62,7 @@ class CalendarNavigatorHeaderSection extends StatelessWidget {
 
         return Container(
           margin: const EdgeInsets.only(left: 24, right: 8),
+          height: 42,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

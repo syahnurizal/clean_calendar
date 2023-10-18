@@ -39,40 +39,50 @@ class _HomeState extends State<Home> {
       body: Center(
         child: ListView(
           children: [
-            CleanCalendar(
-              enableDenseViewForDates: true,
-              enableDenseSplashForDates: true,
-              datesForStreaks: [
-                DateTime(2023, 01, 5),
-                DateTime(2023, 01, 6),
-                DateTime(2023, 01, 7),
-                DateTime(2023, 01, 9),
-                DateTime(2023, 01, 10),
-                DateTime(2023, 01, 11),
-                DateTime(2023, 01, 13),
-                DateTime(2023, 01, 20),
-                DateTime(2023, 01, 21),
-                DateTime(2023, 01, 23),
-                DateTime(2023, 01, 24),
-                DateTime(2023, 01, 25),
-              ],
-              dateSelectionMode: DatePickerSelectionMode.singleOrMultiple,
-              startWeekday: WeekDay.wednesday,
-              selectedDates: selectedDates,
-              onCalendarViewDate: (DateTime calendarViewDate) {
-                // print(calendarViewDate);
-              },
-              onSelectedDates: (List<DateTime> value) {
-                setState(() {
-                  if (selectedDates.contains(value.first)) {
-                    selectedDates.remove(value.first);
-                  } else {
-                    selectedDates.add(value.first);
-                  }
-                });
-                // print(selectedDates);
-              },
+        Card(
+        margin: EdgeInsets.fromLTRB(24, 10, 24, 16),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(5),
+        ),
+        color: Colors.white,
+        surfaceTintColor: Colors.white,
+        child: CleanCalendar(
+          headerProperties: HeaderProperties(
+            navigatorDecoration: NavigatorDecoration(
+              navigatorResetButtonIcon: Icon(Icons.today, size: 20),
+              navigateLeftButtonIcon: Icon(Icons.chevron_left, size: 20),
+              navigateRightButtonIcon: Icon(Icons.chevron_right, size: 20),
+
+            )
+          ),
+            enableDenseViewForDates: true,
+            leadingTrailingDatesProperties: DatesProperties(
+              disable: true,
+              hide: false,
+              datesDecoration: DatesDecoration(
+                datesBorderRadius: 1000,
+                datesBackgroundColor: Colors.grey[100],
+                datesBorderColor: Colors.white,
+              ),
             ),
+            currentDateProperties: DatesProperties(
+              datesDecoration: DatesDecoration(
+                datesBorderRadius: 1000,
+                datesBackgroundColor: Colors.green.withOpacity(0.2),
+                datesBorderColor: Colors.green,
+                datesTextColor: Colors.green,
+              ),
+            ),
+            generalDatesProperties: DatesProperties(
+              datesDecoration: DatesDecoration(
+                datesBorderRadius: 1000,
+                datesBackgroundColor: Colors.white,
+                datesBorderColor: Colors.white,
+                datesTextColor: Colors.black87,
+              ),
+            )
+        ),
+      ),
             const SizedBox(
               height: 20,
             ),

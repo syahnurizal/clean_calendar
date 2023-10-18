@@ -242,7 +242,7 @@ class NoSelectionMonthViewGridViewBuilder extends StatelessWidget {
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           childAspectRatio: 1,
           crossAxisCount: 7,
-          mainAxisExtent: 40,
+          mainAxisExtent: 35,
         ),
 
         childrenDelegate: SliverChildListDelegate(
