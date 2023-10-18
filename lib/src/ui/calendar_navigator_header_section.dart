@@ -61,7 +61,7 @@ class CalendarNavigatorHeaderSection extends StatelessWidget {
             Theme.of(context).textTheme.titleSmall;
 
         return Container(
-          margin: const EdgeInsets.only(left: 24, right: 8),
+          margin: const EdgeInsets.only(left: 16, right: 8),
           height: 42,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
