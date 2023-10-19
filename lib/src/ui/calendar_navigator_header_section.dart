@@ -62,7 +62,7 @@ class CalendarNavigatorHeaderSection extends StatelessWidget {
 
         return Container(
           margin: const EdgeInsets.only(left: 16, right: 8),
-          height: 42,
+          height: 38,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

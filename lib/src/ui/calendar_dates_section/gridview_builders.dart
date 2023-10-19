@@ -242,7 +242,7 @@ class NoSelectionMonthViewGridViewBuilder extends StatelessWidget {
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           childAspectRatio: 1,
           crossAxisCount: 7,
-          mainAxisExtent: 35,
+          mainAxisExtent: 30,
         ),
 
         childrenDelegate: SliverChildListDelegate(
@@ -290,7 +290,7 @@ class DateSingleMultipleSelectionMonthViewGridViewBuilder
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         childAspectRatio: 1,
         crossAxisCount: 7,
-        mainAxisExtent: 35,
+        mainAxisExtent: 30,
       ),
       itemCount: 42,
       physics: const NeverScrollableScrollPhysics(),
@@ -349,7 +349,7 @@ class NoSelectionWeekViewGridViewBuilder extends StatelessWidget {
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           childAspectRatio: 1,
           crossAxisCount: 7,
-          mainAxisExtent: 40,
+          mainAxisExtent: 30,
         ),
 
         childrenDelegate: SliverChildListDelegate(
@@ -397,7 +397,7 @@ class DateSingleMultipleSelectionWeekViewGridViewBuilder
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         childAspectRatio: 1,
         crossAxisCount: 7,
-        mainAxisExtent: 40,
+        mainAxisExtent: 30,
       ),
       itemCount: 7,
       physics: const NeverScrollableScrollPhysics(),
