@@ -60,6 +60,8 @@ class CalendarNavigatorHeaderSection extends StatelessWidget {
                 .headerProperties.monthYearDecoration?.monthYearTextStyle ??
             Theme.of(context).textTheme.titleSmall;
 
+        calendarProperties.onMonthChanged?.call(pageControllerState.pageViewDateTime);
+
         return Container(
           margin: const EdgeInsets.only(left: 16, right: 8),
           height: 38,
@@ -86,7 +88,9 @@ class CalendarNavigatorHeaderSection extends StatelessWidget {
                                     .animateToPage(
                                         pageControllerState.initialIndex,
                                         duration: kTabScrollDuration,
-                                        curve: Curves.ease);
+                                        curve: Curves.ease).then((value){
+                                  //calendarProperties.onMonthChanged?.call(pageControllerState.pageViewDateTime);
+                                });
                               },
                               padding: EdgeInsets.zero,
                               icon: navigatorResetButtonIcon,
@@ -98,7 +102,7 @@ class CalendarNavigatorHeaderSection extends StatelessWidget {
                         onPressed: () {
                           pageControllerState.pageController.previousPage(
                               duration: kTabScrollDuration, curve: Curves.ease).then((value){
-                            calendarProperties.onMonthChanged?.call(pageControllerState.pageViewDateTime);
+                            //calendarProperties.onMonthChanged?.call(pageControllerState.pageViewDateTime);
                           });
                         },
                         padding: EdgeInsets.zero,
@@ -110,7 +114,7 @@ class CalendarNavigatorHeaderSection extends StatelessWidget {
                         onPressed: () {
                           pageControllerState.pageController.nextPage(
                               duration: kTabScrollDuration, curve: Curves.ease).then((value){
-                            calendarProperties.onMonthChanged?.call(pageControllerState.pageViewDateTime);
+                            //calendarProperties.onMonthChanged?.call(pageControllerState.pageViewDateTime);
                           });
                         },
                         padding: EdgeInsets.zero,
