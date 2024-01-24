@@ -137,6 +137,7 @@ class CleanCalendar extends StatelessWidget {
           datesForStreaks: datesForStreaks,
           selectedDates: selectedDates,
           onSelectedDates: onSelectedDates,
+          onMonthChanged: onMonthChanged,
           onCalendarViewDate: onCalendarViewDate,
           startWeekday: startWeekday,
           weekdaysSymbol: weekdaysSymbol,

@@ -97,7 +97,9 @@ class CalendarNavigatorHeaderSection extends StatelessWidget {
                       child: IconButton(
                         onPressed: () {
                           pageControllerState.pageController.previousPage(
-                              duration: kTabScrollDuration, curve: Curves.ease);
+                              duration: kTabScrollDuration, curve: Curves.ease).then((value){
+                            calendarProperties.onMonthChanged?.call(pageViewDateTime);
+                          });
                         },
                         padding: EdgeInsets.zero,
                         icon: navigateLeftButtonIcon,
@@ -107,7 +109,9 @@ class CalendarNavigatorHeaderSection extends StatelessWidget {
                       child: IconButton(
                         onPressed: () {
                           pageControllerState.pageController.nextPage(
-                              duration: kTabScrollDuration, curve: Curves.ease);
+                              duration: kTabScrollDuration, curve: Curves.ease).then((value){
+                            calendarProperties.onMonthChanged?.call(pageViewDateTime);
+                          });
                         },
                         padding: EdgeInsets.zero,
                         icon: navigateRightButtonIcon,

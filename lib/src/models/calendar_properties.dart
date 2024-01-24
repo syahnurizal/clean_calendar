@@ -126,6 +126,9 @@ class CalendarProperties {
   /// Selected dates callback.
   final ValueChanged<List<DateTime>>? onSelectedDates;
 
+  /// Month changes callback.
+  final ValueChanged<DateTime>? onMonthChanged;
+
   /// Calendar current view callback.
   final ValueChanged<DateTime>? onCalendarViewDate;
 
@@ -164,6 +167,7 @@ class CalendarProperties {
     List<DateTime>? datesForStreaks,
     List<DateTime>? selectedDates,
     this.onSelectedDates,
+    this.onMonthChanged,
     this.onCalendarViewDate,
     DatePickerCalendarView? datePickerCalendarView,
     WeekDay? startWeekday,
@@ -513,6 +517,7 @@ class CalendarProperties {
           datesForStreaks == other.datesForStreaks &&
           selectedDates == other.selectedDates &&
           onSelectedDates == other.onSelectedDates &&
+          onMonthChanged == other.onMonthChanged &&
           onCalendarViewDate == other.onCalendarViewDate &&
           datePickerCalendarView == other.datePickerCalendarView &&
           startWeekday == other.startWeekday &&
@@ -540,6 +545,7 @@ class CalendarProperties {
       datesForStreaks.hashCode ^
       selectedDates.hashCode ^
       onSelectedDates.hashCode ^
+      onMonthChanged.hashCode ^
       onCalendarViewDate.hashCode ^
       datePickerCalendarView.hashCode ^
       startWeekday.hashCode ^
@@ -551,6 +557,6 @@ class CalendarProperties {
   // when using the print statement.
   @override
   String toString() {
-    return 'CalendarProperties{weekdaysProperties: $weekdaysProperties, streakDatesProperties: $streakDatesProperties, currentDateProperties: $currentDateProperties, generalDatesProperties: $generalDatesProperties, leadingTrailingDatesProperties: $leadingTrailingDatesProperties, selectedDatesProperties: $selectedDatesProperties, selectedRangeBetweenDatesProperties: $selectedRangeBetweenDatesProperties, enableDenseViewForDates: $enableDenseViewForDates, enableDenseSplashForDates: $enableDenseSplashForDates, startDateOfCalendar: $startDateOfCalendar, endDateOfCalendar: $endDateOfCalendar, dateSelectionMode: $dateSelectionMode, disablePastDates: $disablePastDates, initialViewMonthDateTime: $initialViewMonthDateTime, currentDateOfCalendar: $currentDateOfCalendar, datesForStreaks: $datesForStreaks,  selectedDates: $selectedDates, onSelectedDates: $onSelectedDates, onCalendarViewDate: $onCalendarViewDate, datePickerCalendarView: $datePickerCalendarView, startWeekday: $startWeekday, weekdaysSymbol: $weekdaysSymbol, monthsSymbol: $monthsSymbol, context: $context}';
+    return 'CalendarProperties{weekdaysProperties: $weekdaysProperties, streakDatesProperties: $streakDatesProperties, currentDateProperties: $currentDateProperties, generalDatesProperties: $generalDatesProperties, leadingTrailingDatesProperties: $leadingTrailingDatesProperties, selectedDatesProperties: $selectedDatesProperties, selectedRangeBetweenDatesProperties: $selectedRangeBetweenDatesProperties, enableDenseViewForDates: $enableDenseViewForDates, enableDenseSplashForDates: $enableDenseSplashForDates, startDateOfCalendar: $startDateOfCalendar, endDateOfCalendar: $endDateOfCalendar, dateSelectionMode: $dateSelectionMode, disablePastDates: $disablePastDates, initialViewMonthDateTime: $initialViewMonthDateTime, currentDateOfCalendar: $currentDateOfCalendar, datesForStreaks: $datesForStreaks,  selectedDates: $selectedDates, onSelectedDates: $onSelectedDates, onMonthChanged: $onMonthChanged, onCalendarViewDate: $onCalendarViewDate, datePickerCalendarView: $datePickerCalendarView, startWeekday: $startWeekday, weekdaysSymbol: $weekdaysSymbol, monthsSymbol: $monthsSymbol, context: $context}';
   }
 }
