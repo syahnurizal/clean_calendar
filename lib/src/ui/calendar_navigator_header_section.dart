@@ -98,7 +98,7 @@ class CalendarNavigatorHeaderSection extends StatelessWidget {
                         onPressed: () {
                           pageControllerState.pageController.previousPage(
                               duration: kTabScrollDuration, curve: Curves.ease).then((value){
-                            calendarProperties.onMonthChanged?.call(pageViewDateTime);
+                            calendarProperties.onMonthChanged?.call(pageControllerState.pageViewDateTime);
                           });
                         },
                         padding: EdgeInsets.zero,
@@ -110,7 +110,7 @@ class CalendarNavigatorHeaderSection extends StatelessWidget {
                         onPressed: () {
                           pageControllerState.pageController.nextPage(
                               duration: kTabScrollDuration, curve: Curves.ease).then((value){
-                            calendarProperties.onMonthChanged?.call(pageViewDateTime);
+                            calendarProperties.onMonthChanged?.call(pageControllerState.pageViewDateTime);
                           });
                         },
                         padding: EdgeInsets.zero,
