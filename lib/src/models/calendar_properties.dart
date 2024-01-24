@@ -129,6 +129,12 @@ class CalendarProperties {
   /// Month changes callback.
   final ValueChanged<DateTime>? onMonthChanged;
 
+  /// List of events.
+  final List<dynamic>? events;
+
+  /// Event click callback.
+  final ValueChanged<dynamic>? onEventClick;
+
   /// Calendar current view callback.
   final ValueChanged<DateTime>? onCalendarViewDate;
 
@@ -168,6 +174,8 @@ class CalendarProperties {
     List<DateTime>? selectedDates,
     this.onSelectedDates,
     this.onMonthChanged,
+    this.events,
+    this.onEventClick,
     this.onCalendarViewDate,
     DatePickerCalendarView? datePickerCalendarView,
     WeekDay? startWeekday,
@@ -518,6 +526,8 @@ class CalendarProperties {
           selectedDates == other.selectedDates &&
           onSelectedDates == other.onSelectedDates &&
           onMonthChanged == other.onMonthChanged &&
+          events == other.events &&
+          onEventClick == other.onEventClick &&
           onCalendarViewDate == other.onCalendarViewDate &&
           datePickerCalendarView == other.datePickerCalendarView &&
           startWeekday == other.startWeekday &&
@@ -546,6 +556,8 @@ class CalendarProperties {
       selectedDates.hashCode ^
       onSelectedDates.hashCode ^
       onMonthChanged.hashCode ^
+      events.hashCode ^
+      onEventClick.hashCode ^
       onCalendarViewDate.hashCode ^
       datePickerCalendarView.hashCode ^
       startWeekday.hashCode ^

@@ -31,15 +31,22 @@ class CalendarGeneralDenseDate extends StatelessWidget {
       pageViewDate: pageViewDate,
     );
 
-    Color? datesBackgroundColor =
-        datesProperties.datesDecoration?.datesBackgroundColor;
+    Color? datesBackgroundColor = datesProperties.datesDecoration?.datesBackgroundColor;
     Color? datesTextColor = datesProperties.datesDecoration?.datesTextColor;
     TextStyle? datesTextStyle = datesProperties.datesDecoration?.datesTextStyle;
     Color? datesBorderColor = datesProperties.datesDecoration?.datesBorderColor;
-    double? datesBorderRadius =
-        datesProperties.datesDecoration?.datesBorderRadius;
+    double? datesBorderRadius = datesProperties.datesDecoration?.datesBorderRadius;
     bool hide = datesProperties.hide ?? false;
     bool disable = datesProperties.disable ?? false;
+
+    List<dynamic> eventMatch = [];
+    if(calendarProperties.events != null){
+      for (var event in calendarProperties.events!) {
+        if(event['start_date'] == '${pageViewElementDate.year}-${pageViewElementDate.month.toString().padLeft(2,'0')}-${pageViewElementDate.day.toString().padLeft(2,'0')}'){
+          eventMatch.add(event);
+        }
+      }
+    }
 
     return !hide
         ? InkResponse(
@@ -61,29 +68,67 @@ class CalendarGeneralDenseDate extends StatelessWidget {
                 SizedBox(
                   width: 40,
                   child: Container(
-                    margin: const EdgeInsets.all(4.0),
-                    child: Container(
-                      //Replace here with Ink after this fix https://github.com/flutter/flutter/issues/73315
-                      decoration: BoxDecoration(
-                        border: datesBorderColor != null
-                            ? Border.all(color: datesBorderColor, width: 1)
-                            : null,
-                        borderRadius: datesBorderRadius != null
-                            ? BorderRadius.all(
-                                Radius.circular(datesBorderRadius))
-                            : null,
-                        color: datesBackgroundColor,
-                      ),
-                      child: Center(
-                        child: Text(
-                          pageViewElementDate.day.toString(),
-                          style: datesTextStyle != null
-                              ? datesTextStyle.copyWith(
-                                  color: datesTextColor,
-                                )
-                              : TextStyle(color: datesTextColor),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          //Replace here with Ink after this fix https://github.com/flutter/flutter/issues/73315
+                          decoration: BoxDecoration(
+                            border: datesBorderColor != null
+                                ? Border.all(color: datesBorderColor, width: 1)
+                                : null,
+                            borderRadius: datesBorderRadius != null
+                                ? BorderRadius.all(
+                                    Radius.circular(datesBorderRadius))
+                                : null,
+                            color: datesBackgroundColor,
+                          ),
+                          child: Center(
+                            child: Text(
+                              pageViewElementDate.day.toString(),
+                              style: datesTextStyle != null
+                                  ? datesTextStyle.copyWith(
+                                      color: datesTextColor,
+                                    )
+                                  : TextStyle(color: datesTextColor),
+                            ),
+                          ),
                         ),
-                      ),
+                        eventMatch.isEmpty ? const SizedBox() : Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: eventMatch.map((e) {
+
+
+                            return Container(
+                              height: 6,
+                              width: 6,
+                              margin: EdgeInsets.only(top: 2, left: 2, right: 2),
+                              decoration: BoxDecoration(
+                                  color: e['color'], borderRadius: BorderRadius.circular(6)
+                              ),
+                            );
+                          }).toList()
+                          /*children: [
+                            Container(
+                              height: 6,
+                              width: 6,
+                              margin: EdgeInsets.only(top: 2, left: 2, right: 2),
+                              decoration: BoxDecoration(
+                                  color: Colors.red, borderRadius: BorderRadius.circular(6)
+                              ),
+                            ),
+                            Container(
+                              height: 6,
+                              width: 6,
+                              margin: EdgeInsets.only(top: 2, left: 2, right: 2),
+                              decoration: BoxDecoration(
+                                  color: Colors.red, borderRadius: BorderRadius.circular(6)
+                              ),
+                            )
+                          ],*/
+                        )
+                      ],
                     ),
                   ),
                 ),

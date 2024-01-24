@@ -29,6 +29,8 @@ class CleanCalendar extends StatelessWidget {
     this.selectedDates,
     this.onSelectedDates,
     this.onMonthChanged,
+    this.events,
+    this.onEventClick,
     this.onCalendarViewDate,
     this.startWeekday,
     this.weekdaysSymbol,
@@ -97,6 +99,12 @@ class CleanCalendar extends StatelessWidget {
   /// - onMonthChanged, A callback to get the current selected dates.
   final ValueChanged<DateTime>? onMonthChanged;
 
+  /// - events, It takes the list of event to be display as bullet.
+  final List<dynamic>? events;
+
+  /// - onEventClick, A callback to get the current event clicked.
+  final ValueChanged<dynamic>? onEventClick;
+
   /// - onCalendarViewDate, A callback to get the current calendar view date.
   final ValueChanged<DateTime>? onCalendarViewDate;
 
@@ -138,6 +146,8 @@ class CleanCalendar extends StatelessWidget {
           selectedDates: selectedDates,
           onSelectedDates: onSelectedDates,
           onMonthChanged: onMonthChanged,
+          events: events,
+          onEventClick: onEventClick,
           onCalendarViewDate: onCalendarViewDate,
           startWeekday: startWeekday,
           weekdaysSymbol: weekdaysSymbol,

@@ -119,6 +119,17 @@ class _HomeState extends State<Home> {
                               ))),
                     ),
                     dateSelectionMode: DatePickerSelectionMode.singleOrMultiple,
+                    events: [{
+                      "data_type": "Holiday",
+                      "name": "Cuti Selangor",
+                      "start_date": "2024-01-16",
+                      "end_date": "2024-01-16",
+                      "description": "",
+                      "color": Colors.blue
+                    }],
+                    onEventClick: (v){
+                        print(v);
+                    },
                     ),
               ),
             ),
@@ -128,7 +139,6 @@ class _HomeState extends State<Home> {
             CleanCalendar(
               datePickerCalendarView: DatePickerCalendarView.weekView,
               enableDenseViewForDates: true,
-              enableDenseSplashForDates: true,
               datesForStreaks: [
                 DateTime(2023, 01, 5),
                 DateTime(2023, 01, 6),
