@@ -98,35 +98,15 @@ class CalendarGeneralDenseDate extends StatelessWidget {
                         eventMatch.isEmpty ? const SizedBox() : Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: eventMatch.map((e) {
-
-
                             return Container(
                               height: 6,
                               width: 6,
-                              margin: EdgeInsets.only(top: 2, left: 2, right: 2),
+                              margin: const EdgeInsets.only(top: 2, left: 2, right: 2),
                               decoration: BoxDecoration(
                                   color: e['color'], borderRadius: BorderRadius.circular(6)
                               ),
                             );
                           }).toList()
-                          /*children: [
-                            Container(
-                              height: 6,
-                              width: 6,
-                              margin: EdgeInsets.only(top: 2, left: 2, right: 2),
-                              decoration: BoxDecoration(
-                                  color: Colors.red, borderRadius: BorderRadius.circular(6)
-                              ),
-                            ),
-                            Container(
-                              height: 6,
-                              width: 6,
-                              margin: EdgeInsets.only(top: 2, left: 2, right: 2),
-                              decoration: BoxDecoration(
-                                  color: Colors.red, borderRadius: BorderRadius.circular(6)
-                              ),
-                            )
-                          ],*/
                         )
                       ],
                     ),

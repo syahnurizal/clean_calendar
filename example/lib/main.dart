@@ -119,11 +119,20 @@ class _HomeState extends State<Home> {
                               ))),
                     ),
                     dateSelectionMode: DatePickerSelectionMode.singleOrMultiple,
+                    selectedDates: [DateTime(2024,01,24),DateTime(2024,01,25),DateTime(2024,01,26)],
+                    datesForStreaks: [DateTime(2024,01,24),DateTime(2024,01,25),DateTime(2024,01,26)],
                     events: [{
                       "data_type": "Holiday",
                       "name": "Cuti Selangor",
-                      "start_date": "2024-01-16",
-                      "end_date": "2024-01-16",
+                      "start_date": "2024-01-24",
+                      "end_date": "2024-01-24",
+                      "description": "",
+                      "color": Colors.blue
+                    },{
+                      "data_type": "Holiday",
+                      "name": "Cuti Selangor",
+                      "start_date": "2024-01-26",
+                      "end_date": "2024-01-26",
                       "description": "",
                       "color": Colors.blue
                     }],
