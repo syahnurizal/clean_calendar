@@ -119,8 +119,8 @@ class _HomeState extends State<Home> {
                               ))),
                     ),
                     dateSelectionMode: DatePickerSelectionMode.singleOrMultiple,
-                    selectedDates: [DateTime(2024,01,24),DateTime(2024,01,25),DateTime(2024,01,26)],
-                    datesForStreaks: [DateTime(2024,01,24),DateTime(2024,01,25),DateTime(2024,01,26)],
+                    //selectedDates: [DateTime(2024,01,24),DateTime(2024,01,25),DateTime(2024,01,26)],
+                    //datesForStreaks: [DateTime(2024,01,24),DateTime(2024,01,25),DateTime(2024,01,26)],
                     events: [{
                       "data_type": "Holiday",
                       "name": "Cuti Selangor",
@@ -131,11 +131,25 @@ class _HomeState extends State<Home> {
                     },{
                       "data_type": "Holiday",
                       "name": "Cuti Selangor",
-                      "start_date": "2024-01-26",
-                      "end_date": "2024-01-26",
+                      "start_date": "2024-01-29",
+                      "end_date": "2024-01-29",
                       "description": "",
                       "color": Colors.blue
-                    }],
+                    },{
+                        "data_type": "Leave",
+                        "name": "CHE WAN MUHD IMRAN BIN CHE WAN RAZALI",
+                        "start_date": "2024-01-29",
+                        "end_date": "2024-01-29",
+                        "description": "Work From Home",
+                        "color": Colors.black
+                      },{
+                "data_type": "Leave",
+                "name": "CHE WAN MUHD IMRAN BIN CHE WAN RAZALI",
+                "start_date": "2023-12-29",
+                "end_date": "2023-12-29",
+                "description": "Work From Home",
+                "color": Colors.black
+                }],
                     onEventClick: (v){
                         print(v);
                     },
