@@ -43,7 +43,9 @@ class CalendarGeneralDenseDate extends StatelessWidget {
     if(calendarProperties.events != null){
       for (var event in calendarProperties.events!) {
         if(event['start_date'] == '${pageViewElementDate.year}-${pageViewElementDate.month.toString().padLeft(2,'0')}-${pageViewElementDate.day.toString().padLeft(2,'0')}'){
-          eventMatch.add(event);
+          if(eventMatch.length < 3) {
+            eventMatch.add(event);
+          }
         }
       }
     }
